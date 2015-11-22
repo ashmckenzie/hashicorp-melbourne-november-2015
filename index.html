@@ -77,11 +77,13 @@
         padding: 0;
       }
 
-      #slide-tips-alpine .logo,
-      #slide-tips-debian .logo,
-      #slide-tips-percheron .logo {
-        float: left;
-        margin: 20px 20px 0 0;
+      .topic-reverse h1 {
+        margin-bottom: 0;
+      }
+
+      .topic-reverse h2 {
+        color: #fff;
+        margin-top: 0;
       }
 
       #slide-thanks h3 {
@@ -134,8 +136,9 @@ class: center, middle
 
 # Topics
 
-### In ye olde days
-### Zendesk's Vault
+### Secrets?
+### Secrets at Zendesk: In ye olde days
+### Secrets at Zendesk: Vault
 ### Hashicorp's Vault
 ### Vault vs. Vault
 
@@ -143,16 +146,43 @@ class: center, middle
 
 layout: false
 class: center, middle
-background-image: url(./images/australian-bush.jpg)
+background-image: url(./images/secret-squirrel.png)
 
-# In ye olde days
+# Secrets?
 
 ---
 
 layout: true
 class: topic-template
 
-# In ye olde days
+# Secrets?
+
+---
+
+## Secrets?
+
+* Pieces of information that are private, secret or sensitive
+* Examples
+  * Usernames and/or passwords
+  * API keys
+  * SSH private keys
+  * Base64 encoded binary license files
+
+---
+
+layout: false
+class: center, middle, topic-reverse
+background-image: url(./images/australian-bush.jpg)
+
+# Secrets at Zendesk
+## In ye olde days
+
+---
+
+layout: true
+class: topic-template
+
+# Secrets at Zendesk: In ye olde days
 
 ---
 
@@ -219,23 +249,25 @@ new_relic_api_key: "40d6b575e0fed78ee8483c71b4b2ce0e"
 ---
 
 layout: false
-class: center, middle
+class: center, middle, topic-reverse
 background-image: url(./images/zendesk-vault.jpg)
 
-# Zendesk's Vault
+# Secrets at Zendesk
+
+## Vault
 
 ---
 
 layout: true
 class: topic-template
 
-# Zendesk's Vault
+# Secrets at Zendesk: Vault
 
 ---
 
 ## Overview
 
-* Utilised Hashicorp's Consul
+* Utilises Hashicorp's (awesome) Consul
 
 ---
 
