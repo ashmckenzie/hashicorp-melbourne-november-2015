@@ -137,8 +137,8 @@ class: center, middle
 # Topics
 
 ### Secrets?
-### Zendesk: In ye olde days
-### Zendesk: Vault
+### Zendesk: Pre Vault
+### Zendesk's Vault
 ### Hashicorp's Vault
 ### Vault vs. Vault
 
@@ -175,14 +175,14 @@ class: center, middle, topic-reverse
 background-image: url(./images/australian-bush.jpg)
 
 # Zendesk
-## In ye olde days
+## Pre Vault
 
 ---
 
 layout: true
 class: topic-template
 
-# Zendesk: In ye olde days
+# Zendesk: Pre Vault
 
 ---
 
@@ -193,6 +193,7 @@ class: topic-template
 * `sync-secrets`
   * Ruby command line tool
   * Relied upon Chef & `scp`
+  * Processed in parallel
 
 ---
 
@@ -231,7 +232,7 @@ new_relic_api_key: "40d6b575e0fed78ee8483c71b4b2ce0e"
 
 * Easy to see all secrets <i class="twa twa-smile"></i>
 * Single source of truth
-* Simply to update, just text!
+* Simple to update, just text!
 * Did not rely on any external service
 * Access control used Unix permissions
 * Managed using Git
@@ -253,7 +254,7 @@ layout: false
 class: center, middle, topic-reverse
 background-image: url(./images/zendesk-vault.jpg)
 
-# Zendesk
+# Zendesk's
 
 ## Vault
 
@@ -262,14 +263,33 @@ background-image: url(./images/zendesk-vault.jpg)
 layout: true
 class: topic-template
 
-# Zendesk: Vault
+# Zendesk's: Vault
 
 ---
 
 ## Overview
 
 * Utilises Hashicorp's (awesome) Consul
+  * key -> value store
+  * HTTP API
+* Ruby command line tools
+  * List / Get / Add / Remove
+* In production ~ 18 months
 * Created pre Hashicorp's Vault
+
+---
+
+class: center
+
+<img width="57%" src="./images/zendesk-vault-architecture.png" />
+
+---
+
+## PROS
+
+---
+
+## CONS
 
 ---
 
