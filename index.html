@@ -242,7 +242,7 @@ new_relic_api_key: "40d6b575e0fed78ee8483c71b4b2ce0e"
 ## CONS
 
 * Easy to see all secrets <i class="twa twa-disappointed"></i>
-* Single source of truth
+* Single source of truth (not good if node that holds master `secrets.yml` is down)
 * Increasingly slow to push out updates
 * Small window of time where some servers were out-of-sync
 * Offline nodes could come back online and be out-of-sync
@@ -273,7 +273,7 @@ class: topic-template
   * key -> value store
   * HTTP API
 * Ruby command line tools
-  * List / Get / Add / Remove
+  * List / Get / Add / Update / Remove
 * In production ~ 18 months
 * Created pre Hashicorp's Vault
 
@@ -287,9 +287,18 @@ class: center
 
 ## PROS
 
+* Centraliased storage <i class="twa twa-smile"></i>
+* Automatically replicated (with Consul) <i class="twa twa-smile"></i> <i class="twa twa-smile"></i>
+* Environment only secrets exposed
+* Add / Update / Remove from any node for environment
+* Potential to allow non Ops staff to manage
+
 ---
 
 ## CONS
+
+* Requires Consul up and running (we use it anyway)
+* All secrets for an environment exposed
 
 ---
 
