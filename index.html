@@ -117,8 +117,6 @@ class: center, middle
 
 * Bit about me..
 * APAC Tech Lead which includes the Melbourne and Singapore offices
-* At Zendesk 18 months, come from a more software engineering background, prefer the system problem space
-* If I wasn't getting down and dirty with DevOps work, I'd be working with arduino, micro controllers or what is now called the IoT
 
 ---
 
@@ -139,23 +137,108 @@ class: center, middle
 ### In ye olde days
 ### Zendesk's Vault
 ### Hashicorp's Vault
+### Vault vs. Vault
 
 ---
 
 layout: false
 class: center, middle
+background-image: url(./images/australian-bush.jpg)
 
 # In ye olde days
 
 ---
 
+layout: true
 class: topic-template
 
 # In ye olde days
 
-* Secrets in YML file
+---
+
+## Secrets in YAML file
+
+* A single YAML file
+* Environment at highest level
+* `sync-secrets` Ruby tool used to push out changes
+* Utilised Chef & `scp`
+
+---
+
+## secrets.yml
+
+```yml
+---
+staging:
+  project_x:
+    admin_email: "ops@zendesk.com"
+  new_relic_api_key: "40d6b575e0fed78ee8483c71b4b2ce0e"
+
+production:
+  new_relic_api_key: "4a6e4ec5d55a7c38d8a07e1acc2c52a0"
+```
+
+---
+
+## staging secrets.yml
+
+```yml
+---
+project_x:
+  admin_email: "ops@zendesk.com"
+new_relic_api_key: "40d6b575e0fed78ee8483c71b4b2ce0e"
+```
 
 ???
+
+* Note the root level environment (staging) has been removed
+* The allowed code to simply ask for a secret without needing to know the current operating environment
+
+---
+
+layout: true
+class: topic-template
+
+# In ye olde days > Secrets in a YAML file
+
+---
+
+## PROS
+
+* Easy to see all secrets <i class="twa twa-smile"></i>
+* Managed using Git
+
+---
+
+## CONS
+
+* Easy to see all secrets <i class="twa twa-disappointed"></i>
+* How to distribute?
+* How to restrict access?
+
+---
+
+layout: false
+class: center, middle
+background-image: url(./images/zendesk-vault.jpg)
+
+# Zendesk's Vault
+
+---
+
+layout: false
+class: center, middle
+background-image: url(./images/vault-logo.png)
+
+# Hashicorp's Vault
+
+---
+
+layout: false
+class: center, middle
+background-image: url(./images/spy-vs-spy.png)
+
+# Vault vs. Vault
 
 ---
 
