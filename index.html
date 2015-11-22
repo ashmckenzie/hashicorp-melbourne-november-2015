@@ -3,98 +3,8 @@
   <head>
     <title>Keeping & sharing Zendesk</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/default.css">
     <link rel="stylesheet" href="./css/twemoji-awesome.css">
-    <style>
-      /*@import url(https://fonts.googleapis.com/css?family=Lora:400,700);*/
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
-
-      /*@font-face { font-family: "Lora"; src: url("./fonts/Lora-Regular.ttf"); };*/
-      @font-face { font-family: "Roboto"; src: url("./fonts/Roboto-Regular.ttf"); };
-      @font-face { font-family: "Bebas Neue"; src: url("./fonts/BebasNeue Regular.otf"); };
-      @font-face { font-family: "Bebas Neue"; src: url("./fonts/BebasNeue Bold.otf"); font-weight: "bold"; };
-
-      body {
-        font-size: 2em;
-        font-family: 'Droid Serif';
-      }
-      h1, h2, h3 {
-        font-family: "Bebas Neue";
-        font-weight: normal;
-        letter-spacing: 4px;
-      }
-      h1 {
-        color: #78A300;
-        font-size: 4em !important;
-        font-weight: bold;
-      }
-      h2 {
-        font-size: 3em !important;
-        margin: 0.6em 0 0.4em 0;
-      }
-      .topic-template h1 {
-        color: #999;
-        font-family: "Bebas Neue";
-        font-size: 0.9em !important;
-        margin: 0;
-        padding-bottom: 10px;
-        text-align: left;
-        letter-spacing: 4px;
-        border-bottom: 1px solid #ddd;
-      }
-      .remark-code, .remark-inline-code {
-        font-family: "Roboto Mono", monospace;
-        line-height: 28px;
-      }
-      .remark-container {
-        background-color: #333;
-      }
-      .remark-slide-content {
-        background-color: #fff;
-        color: #333;
-        font-family: "Droid Serif";
-        letter-spacing: 1px !important;
-      }
-      .remark-slide-content p,
-      .remark-slide-content li {
-        font-size: 1.5em;
-        padding: 8px 0;
-      }
-      .remark-slide-content li ul li {
-        font-size: inherit;
-      }
-      .remark-slide-number {
-        font-size: 0.45em;
-      }
-      .remark-notes {
-        font-size: 1.5em;
-      }
-      p.image-attribution {
-        color: #777;
-        font-size: 0.5em;
-        font-family: "Arial";
-        margin: -35px 0 0 0;
-        padding: 0;
-      }
-
-      .topic-reverse h1 {
-        margin-bottom: 0;
-      }
-
-      .topic-reverse h2 {
-        color: #fff;
-        margin-top: 0;
-      }
-
-      #slide-secret-squirrel {
-        background-position: 45%;
-      }
-
-      #slide-thanks h3 {
-        line-height: 20px;
-      }
-
-    </style>
   </head>
   <body>
     <textarea id="source">
@@ -142,9 +52,9 @@ class: center, middle
 
 ### Secrets?
 ### Zendesk: Pre Vault
+### Vault vs. Vault
 ### Zendesk's Vault
 ### Hashicorp's Vault
-### Vault vs. Vault
 
 ---
 
@@ -252,9 +162,17 @@ new_relic_api_key: "40d6b575e0fed78ee8483c71b4b2ce0e"
 * Single source of truth
 * Increasingly slow to push out updates
 * Small window where some servers could be out-of-sync
-* Offline nodes return and can be out-of-sync
+* Zendeskodes return and can be out-of-sync
 * Difficult to quickly update / revoke a secret
 * Not possible for non Ops staff to maintain
+
+---
+
+layout: false
+class: center, middle
+background-image: url(./images/spy-vs-spy.png)
+
+# Vault vs. Vault
 
 ---
 
@@ -271,7 +189,7 @@ background-image: url(./images/zendesk-vault.jpg)
 layout: true
 class: topic-template
 
-# Zendesk's: Vault
+# Zendesk: Vault
 
 ---
 
@@ -333,22 +251,15 @@ class: topic-template
 
 ---
 
-layout: false
-class: center, middle
-background-image: url(./images/spy-vs-spy.png)
+## PROS
 
-# Vault vs. Vault
+* Multiple backend types
 
 ---
 
-layout: true
-class: topic-template
+## CONS
 
-# Vault vs. Vault
-
----
-
-## X
+* Requires vault service running
 
 ---
 
