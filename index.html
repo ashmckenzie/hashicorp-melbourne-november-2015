@@ -159,9 +159,9 @@ class: topic-template
 ## Secrets in YAML file
 
 * A single YAML file
-* Environment at highest level
-* `sync-secrets` Ruby tool used to push out changes
+* Environment keys at root
 * Utilised Chef & `scp`
+* `sync-secrets` Ruby tool used to push out changes
 
 ---
 
@@ -196,16 +196,13 @@ new_relic_api_key: "40d6b575e0fed78ee8483c71b4b2ce0e"
 
 ---
 
-layout: true
-class: topic-template
-
-# In ye olde days > Secrets in a YAML file
-
----
-
 ## PROS
 
 * Easy to see all secrets <i class="twa twa-smile"></i>
+* Single source of truth
+* Simply to update, just text!
+* Did not rely on any external service
+* Access control used Unix permissions
 * Managed using Git
 
 ---
@@ -213,8 +210,11 @@ class: topic-template
 ## CONS
 
 * Easy to see all secrets <i class="twa twa-disappointed"></i>
-* How to distribute?
-* How to restrict access?
+* Single source of truth
+* Increasingly slow to push out updates
+* Small window of time where some servers were out-of-sync
+* Offline nodes could come back online and be out-of-sync
+* Not possible for non Ops staff to maintain
 
 ---
 
@@ -226,6 +226,19 @@ background-image: url(./images/zendesk-vault.jpg)
 
 ---
 
+layout: true
+class: topic-template
+
+# Zendesk's Vault
+
+---
+
+## Overview
+
+* Utilised Hashicorp's Consul
+
+---
+
 layout: false
 class: center, middle
 background-image: url(./images/vault-logo.png)
@@ -234,11 +247,33 @@ background-image: url(./images/vault-logo.png)
 
 ---
 
+layout: true
+class: topic-template
+
+# Hashicorp's Vault
+
+---
+
+## Overview
+
+---
+
 layout: false
 class: center, middle
 background-image: url(./images/spy-vs-spy.png)
 
 # Vault vs. Vault
+
+---
+
+layout: true
+class: topic-template
+
+# Vault vs. Vault
+
+---
+
+## X
 
 ---
 
