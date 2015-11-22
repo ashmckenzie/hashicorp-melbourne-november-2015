@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Keeping & sharing secrets at Zendesk</title>
+    <title>Keeping & sharing Zendesk</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./css/twemoji-awesome.css">
     <style>
@@ -137,8 +137,8 @@ class: center, middle
 # Topics
 
 ### Secrets?
-### Secrets at Zendesk: In ye olde days
-### Secrets at Zendesk: Vault
+### Zendesk: In ye olde days
+### Zendesk: Vault
 ### Hashicorp's Vault
 ### Vault vs. Vault
 
@@ -161,7 +161,7 @@ class: topic-template
 
 ## Secrets?
 
-* Pieces of information that are private, secret or sensitive
+* Pieces of information that are confidential, private or sensitive in nature
 * Examples
   * Usernames and/or passwords
   * API keys
@@ -174,7 +174,7 @@ layout: false
 class: center, middle, topic-reverse
 background-image: url(./images/australian-bush.jpg)
 
-# Secrets at Zendesk
+# Zendesk
 ## In ye olde days
 
 ---
@@ -182,7 +182,7 @@ background-image: url(./images/australian-bush.jpg)
 layout: true
 class: topic-template
 
-# Secrets at Zendesk: In ye olde days
+# Zendesk: In ye olde days
 
 ---
 
@@ -190,18 +190,19 @@ class: topic-template
 
 * A single YAML file
 * Environment keys at root
-* Utilised Chef & `scp`
-* `sync-secrets` Ruby tool used to push out changes
+* `sync-secrets`
+  * Ruby command line tool
+  * Relied upon Chef & `scp`
 
 ---
 
 ## secrets.yml
 
-```yml
+```ruby
 ---
 staging:
   project_x:
-    admin_email: "ops@zendesk.com"
+    admin_email: "do-not-reply@zendesk.com"
   new_relic_api_key: "40d6b575e0fed78ee8483c71b4b2ce0e"
 
 production:
@@ -212,10 +213,10 @@ production:
 
 ## staging secrets.yml
 
-```yml
+```ruby
 ---
 project_x:
-  admin_email: "ops@zendesk.com"
+  admin_email: "do-not-reply@zendesk.com"
 new_relic_api_key: "40d6b575e0fed78ee8483c71b4b2ce0e"
 ```
 
@@ -252,7 +253,7 @@ layout: false
 class: center, middle, topic-reverse
 background-image: url(./images/zendesk-vault.jpg)
 
-# Secrets at Zendesk
+# Zendesk
 
 ## Vault
 
@@ -261,13 +262,14 @@ background-image: url(./images/zendesk-vault.jpg)
 layout: true
 class: topic-template
 
-# Secrets at Zendesk: Vault
+# Zendesk: Vault
 
 ---
 
 ## Overview
 
 * Utilises Hashicorp's (awesome) Consul
+* Created pre Hashicorp's Vault
 
 ---
 
