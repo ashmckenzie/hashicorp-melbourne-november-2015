@@ -190,6 +190,7 @@ class: topic-template
 
 * A single YAML file
 * Environment keys at root
+* Used by both Chef & applications
 * `sync-secrets`
   * Ruby command line tool
   * Relied upon Chef & `scp`
@@ -246,6 +247,7 @@ new_relic_api_key: "40d6b575e0fed78ee8483c71b4b2ce0e"
 * Increasingly slow to push out updates
 * Small window of time where some servers were out-of-sync
 * Offline nodes could come back online and be out-of-sync
+* Difficult to quickly update / revoke a secret
 * Not possible for non Ops staff to maintain
 
 ---
@@ -272,8 +274,9 @@ class: topic-template
 * Utilises Hashicorp's (awesome) Consul
   * key -> value store
   * HTTP API
-* Ruby command line tools
+* Ruby library & command line tools
   * List / Get / Add / Update / Remove
+* Used by both Chef & applications
 * In production ~ 18 months
 * Created pre Hashicorp's Vault
 
@@ -289,8 +292,9 @@ class: center
 
 * Centraliased storage <i class="twa twa-smile"></i>
 * Automatically replicated (with Consul) <i class="twa twa-smile"></i> <i class="twa twa-smile"></i>
+* Extremely easy to quickly update / revoke a secret
 * Environment only secrets exposed
-* Add / Update / Remove from any node for environment
+* Add / Update / Remove from any node (for given environment)
 * Potential to allow non Ops staff to manage
 
 ---
@@ -299,6 +303,7 @@ class: center
 
 * Requires Consul up and running (we use it anyway)
 * All secrets for an environment exposed
+* No Git style commit history <i class="twa twa-disappointed"></i>
 
 ---
 
