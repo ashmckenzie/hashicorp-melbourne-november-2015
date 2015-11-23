@@ -206,6 +206,10 @@ class: center
 
 <img width="57%" src="./images/zendesk-vault-architecture.png" />
 
+???
+
+* Client to Consul API interactions are encrypted using TLS certificates
+
 ---
 
 ## PROS
@@ -246,7 +250,7 @@ class: topic-template
 
 ## Overview
 
-* Service that provides
+* Provides secure storage & retrieval of secrets
 * Has a super convenient `-dev` mode
 
 ---
@@ -255,7 +259,12 @@ class: topic-template
 
 * HTTP API <i class="twa twa-joy"></i> <i class="twa twa-joy"></i>
 * Dynamic secrets <i class="twa twa-joy"></i>
-* Multiple backend types
+* Multiple secret backends
+  * Consul, generic, MySQL, AWS
+* Multiple auth backends
+  * TLS certs, token, GitHub, user/pass
+* Multiple audit backends
+  * File, syslog
 
 ---
 
@@ -290,6 +299,12 @@ class: topic-template
   * Data at rest can be encrypted <i class="twa twa-joy"></i> <i class="twa twa-joy"></i>
   * Comprehensive audit logging (file / syslog)
   * Ability to have multiple vaults
+
+---
+
+## Interactive Demo
+
+[www.vaultproject.io/#/demo/0](https://www.vaultproject.io/#/demo/0)
 
 ---
 
