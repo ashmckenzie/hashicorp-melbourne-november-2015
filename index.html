@@ -134,7 +134,7 @@ new_relic_api_key: "40d6b575e0fed78ee8483c71b4b2ce0e"
 ???
 
 * Note the root level environment (staging) has been removed
-* The allowed code to simply ask for a secret without needing to know the current operating environment
+* This allowed code to simply ask for a secret without needing to know the current operating environment
 
 ---
 
@@ -143,20 +143,22 @@ new_relic_api_key: "40d6b575e0fed78ee8483c71b4b2ce0e"
 * Easy to see all secrets <i class="twa twa-smile"></i>
 * Single source of truth
 * Simple to update, just text!
-* Did not rely on any external service
+* Did not rely on an internal / external service
 * Access control used Unix permissions
 * Managed using Git
 
 ---
 
+name: secrets-yml-cons
+
 ## CONS
 
-* Data at rest is not encrypted <i class="twa twa-disappointed"></i> <i class="twa twa-disappointed"></i>
+* Data at rest was not encrypted <i class="twa twa-disappointed"></i> <i class="twa twa-disappointed"></i>
 * Easy to see all secrets <i class="twa twa-disappointed"></i>
 * Single source of truth
 * Increasingly slow to push out updates
-* Small window where some servers could be out-of-sync
-* Zendeskodes return and can be out-of-sync
+* Window where some servers could be out-of-sync
+* New or previously offline nodes come online and could be out-of-sync
 * Difficult to quickly update / revoke a secret
 * Not possible for non Ops staff to maintain
 
@@ -223,6 +225,7 @@ class: center
 * No Git style commit history <i class="twa twa-disappointed"></i>
 * Requires Consul up and running (we use it anyway)
 * All secrets for an environment exposed
+* Manual step of granting access required
 
 ---
 
@@ -243,6 +246,9 @@ class: topic-template
 
 ## Overview
 
+* Service that provides
+* Has a super convenient `-dev` mode
+
 ---
 
 ## PROS
@@ -256,6 +262,34 @@ class: topic-template
 ## CONS
 
 * Requires vault service running
+
+---
+
+layout: false
+class: center, middle
+name: migrate-to-hashicorp-vault
+background-image: url(./images/zendesk-moving-to-vault.jpg)
+
+# Migrating to Hashicorp's Vault
+
+---
+
+layout: true
+class: topic-template
+
+# Migrating to Hashicorp's Vault
+
+---
+
+## Benefits
+
+* Maintained by a world class team <i class="twa twa-joy"></i>
+* Full featured HTTP based API
+* Multiple backend types (and future support)
+* Solves the following concerns with our Vault:
+  * Data at rest can be encrypted <i class="twa twa-joy"></i> <i class="twa twa-joy"></i>
+  * Comprehensive audit logging (file / syslog)
+  * Ability to have multiple vaults
 
 ---
 

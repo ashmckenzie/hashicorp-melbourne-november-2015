@@ -79,8 +79,16 @@ p.image-attribution {
   margin-top: 0;
 }
 
+#slide-secrets-yml-cons li {
+  font-size: 1.39em;
+}
+
 #slide-secret-squirrel {
   background-position: 45%;
+}
+
+#slide-migrate-to-hashicorp-vault {
+  background-size: 100% 80%;
 }
 
 #slide-thanks h3 {
